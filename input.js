@@ -1,6 +1,8 @@
 let connection;
 const net = require('net');
 const handleUserInput = function(key) {
+  //connection.write("Say:PPM");
+
   if(key === '\u0003') {
     process.exit();
   }
@@ -16,6 +18,7 @@ const handleUserInput = function(key) {
   if(key === 'd') {
     connection.write("Move: right");
   }
+  //connection.write("Say:PPM");
   
 }
 
@@ -25,6 +28,10 @@ const setupInput = function(conn) {
     host : 'localhost',
     port : 50541
   });
+  connection.on('connect', () => {
+    connection.write("Say: NPM");
+  });
+  connection.write("S")
   connection.setEncoding('utf8');
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -32,10 +39,6 @@ const setupInput = function(conn) {
   stdin.resume();
   stdin.on('data',handleUserInput);
   return stdin;
-
- 
-
-
 
 
 }
