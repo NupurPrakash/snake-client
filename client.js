@@ -21,42 +21,11 @@ const connect = function() {
     conn.write("Move down");
   });
 
-
-/*
-  conn.on('connect',() => {
-    setTimeout(() => {
-      conn.write("Move: right");
-    },2000)
-  });
-  */
- /*
- setTimeout(() => {
-   conn.on('connect',() => {
-     conn.write("Move: down");
-   })
- },2000);
-*/
-
   conn.on('data',(data) => {
     console.log('It\'s got a sharp tongue, this server!',data)
   });
 
 }
-/*
-const handleUserInput = function() {
-  const stdin = net.createConnection({
-    host : 'localhost',
-    port : 50541
-  });
-stdin.setEncoding('utf8')
-stdin.on('data',(data) => {
-  console.log("Caught interrupt ");
 
-});
-
-}
-*/
- 
 
 module.exports = connect;
-//module.exports = handleUserInput;
