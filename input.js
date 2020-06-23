@@ -19,7 +19,6 @@ const handleUserInput = function(key) {
   
 }
 
-
 const setupInput = function(conn) {
   connection = conn;
   connection = net.createConnection({
@@ -27,8 +26,6 @@ const setupInput = function(conn) {
     port : 50541
   });
   connection.setEncoding('utf8');
-  
- 
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding('utf8');
