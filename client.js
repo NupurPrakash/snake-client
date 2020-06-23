@@ -16,11 +16,12 @@ const connect = function() {
 
   conn.on('connect',() => {
     conn.write("Move: up");
+    conn.write("Move left");
+    conn.write("Move right");
+    conn.write("Move down");
   });
 
-  conn.on('connect',() => {
-    conn.write("Move: left");
-  });
+
 /*
   conn.on('connect',() => {
     setTimeout(() => {
@@ -40,8 +41,22 @@ const connect = function() {
     console.log('It\'s got a sharp tongue, this server!',data)
   });
 
+}
+/*
+const handleUserInput = function() {
+  const stdin = net.createConnection({
+    host : 'localhost',
+    port : 50541
+  });
+stdin.setEncoding('utf8')
+stdin.on('data',(data) => {
+  console.log("Caught interrupt ");
+
+});
 
 }
-
+*/
+ 
 
 module.exports = connect;
+//module.exports = handleUserInput;
