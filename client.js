@@ -13,7 +13,29 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write("Name: PPM");
   });
-  
+
+  conn.on('connect',() => {
+    conn.write("Move: up");
+  });
+
+  conn.on('connect',() => {
+    conn.write("Move: left");
+  });
+/*
+  conn.on('connect',() => {
+    setTimeout(() => {
+      conn.write("Move: right");
+    },2000)
+  });
+  */
+ /*
+ setTimeout(() => {
+   conn.on('connect',() => {
+     conn.write("Move: down");
+   })
+ },2000);
+*/
+
   conn.on('data',(data) => {
     console.log('It\'s got a sharp tongue, this server!',data)
   });
